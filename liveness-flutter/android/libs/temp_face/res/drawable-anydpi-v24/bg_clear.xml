@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="375dp"
+    android:height="667dp"
+    android:viewportWidth="375"
+    android:viewportHeight="667">
+  <path
+      android:pathData="M0,0h375v667h-375z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startX="187.5"
+          android:startY="-333.5"
+          android:endX="-382.37"
+          android:endY="-13.11"
+          android:type="linear">
+        <item android:offset="0" android:color="@color/udentifyface_bg_color"/>
+        <item android:offset="0.51" android:color="@color/udentifyface_bg_color"/>
+        <item android:offset="1" android:color="@color/udentifyface_bg_color"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M375,0.24C375,0.24 0,-0.3 0,0.24C0,11.23 0.88,230.95 0,270.7C-0.88,310.46 371.98,311.66 375,270.93C375,229.5 375,128.5 375,0.24Z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startX="29.46"
+          android:startY="47.14"
+          android:endX="29.46"
+          android:endY="301"
+          android:type="linear">
+        <item android:offset="0" android:color="@color/udentifyface_bg_color"/>
+        <item android:offset="0.64" android:color="@color/udentifyface_bg_color"/>
+        <item android:offset="1" android:color="@color/udentifyface_bg_color"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+</vector>

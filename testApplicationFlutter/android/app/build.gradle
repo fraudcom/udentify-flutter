@@ -1,0 +1,94 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.fraud.fraudflutter"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId = "com.fraud.fraudflutter"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+            // Disable obfuscation to prevent native library crashes
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+    
+    aaptOptions {
+        noCompress "tflite"
+    }
+}
+
+dependencies {
+    // Add the Udentify AAR files so the main app can compile the plugin registration
+    implementation fileTree(dir: '../../../udentify-core-flutter/android/libs', include: ['*.aar'])
+    implementation fileTree(dir: '../../../ocr-flutter/android/libs', include: ['*.aar'])
+    implementation fileTree(dir: '../../../nfc-flutter/android/libs', include: ['*.aar'])
+    implementation fileTree(dir: '../../../mrz-flutter/android/libs', include: ['*.aar'])
+    implementation fileTree(dir: '../../../liveness-flutter/android/libs', include: ['*.aar'])
+    implementation fileTree(dir: '../../../video-call-flutter/android/libs', include: ['*.aar'])
+    
+    // Add the required dependencies for the SDKs
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:okhttp-tls:4.12.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.code.gson:gson:2.8.7'
+    
+    // NFC specific dependencies
+    implementation 'org.jmrtd:jmrtd:0.7.17'
+    implementation 'net.sf.scuba:scuba-sc-android:0.0.19'
+    implementation 'edu.ucar:jj2000:5.2'
+    
+    // OCR specific dependencies
+    implementation 'com.otaliastudios:cameraview:2.7.2'
+    implementation 'com.google.mlkit:face-detection:16.1.5'
+    implementation 'com.google.mlkit:object-detection:17.0.0'
+    
+    // MRZ specific dependencies
+    implementation 'com.github.adaptech-cz:Tesseract4Android:2.1.0'
+    implementation 'com.github.mhshams:jnbis:1.1.0'
+    
+    // Video Call dependencies
+    implementation 'androidx.activity:activity:1.7.2'
+    implementation 'androidx.navigation:navigation-fragment:2.8.3'
+    implementation 'io.livekit:livekit-android:2.12.1'
+    
+    // Face Recognition & Liveness dependencies
+    implementation 'com.otaliastudios:cameraview:2.7.2'
+    implementation 'com.google.mlkit:face-detection:16.1.2'
+    implementation 'org.tensorflow:tensorflow-lite:2.9.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.9.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.0'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+}
+
+flutter {
+    source = "../.."
+}

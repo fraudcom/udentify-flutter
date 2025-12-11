@@ -1,0 +1,30 @@
+name: video_call_flutter
+description: A comprehensive Flutter plugin for video calling using Udentify's SDK. Supports video calls with real-time communication and UI customization.
+version: 0.1.0
+homepage: https://github.com/your-repo/video-call-flutter
+repository: https://github.com/your-repo/video-call-flutter
+issue_tracker: https://github.com/your-repo/video-call-flutter/issues
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.videocallflutter
+        pluginClass: VideoCallFlutterPlugin
+      ios:
+        pluginClass: VideoCallFlutterPlugin

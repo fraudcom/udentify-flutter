@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cameraContainerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    android:background="@android:color/black">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center"
+        android:keepScreenOn="true"
+        app:cameraUseDeviceOrientation="false"
+        app:cameraAudio="off"
+        app:cameraAutoFocusResetDelay="0"
+        app:cameraFacing="front"
+        app:cameraFlash="off"
+        app:cameraGestureScrollHorizontal="exposureCorrection"
+        app:cameraPictureSizeBiggest="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_take_selfie"
+        style="@style/UdentifySelfieButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/udentify_selfie_button_height"
+        android:layout_marginLeft="@dimen/udentify_selfie_button_horizontal_margin"
+        android:layout_marginRight="@dimen/udentify_selfie_button_horizontal_margin"
+        android:layout_marginBottom="@dimen/udentify_selfie_button_bottom_margin"
+        android:backgroundTint="@color/udentifyface_btn_color"
+        android:backgroundTintMode="src_over"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/udentifyface_active_liveness_footer_button_text_default"
+        android:textColor="@color/udentifyface_btn_text_color"
+        app:cornerRadius="@dimen/udentify_face_selfie_button_corner_radius"
+        app:layout_constraintBottom_toBottomOf="@+id/camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/progress_bar_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/udentify_selfie_button_height"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/button_take_selfie"
+        app:layout_constraintEnd_toEndOf="@id/button_take_selfie"
+        app:layout_constraintStart_toStartOf="@id/button_take_selfie"
+        app:layout_constraintTop_toTopOf="@id/button_take_selfie">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:indicatorColor="@color/udentifyface_btn_color_success"
+            app:trackColor="@color/udentifyface_progress_background_color"
+            app:trackCornerRadius="@dimen/udentify_face_selfie_button_corner_radius"
+            app:trackThickness="@dimen/udentify_selfie_button_height" />
+
+        <TextView
+            android:id="@+id/progress_bar_text"
+            style="@style/UdentifySelfieButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/gesture_presentation_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        style="@style/UdentifyBackground"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/faceAnimationView"
+        android:layout_width="275dp"
+        android:layout_height="390dp"
+        android:foregroundGravity="center"
+        android:visibility="visible"
+        app:lottie_rawRes="@raw/active_blink"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toTopOf="@+id/button_take_selfie"
+        app:layout_constraintEnd_toEndOf="@id/camera"
+        app:layout_constraintStart_toStartOf="@id/camera"
+        app:layout_constraintTop_toTopOf="@+id/camera"/>
+
+    <TextView
+        android:visibility="visible"
+        android:id="@+id/active_liveness_gestures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:fontFamily="@font/gilroy_bold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/udentifyface_gesture_font_size"
+        android:textStyle="bold"
+        android:text="@string/udentifyface_message_face_off_center"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/active_verification_text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:text="@string/udentifyface_active_liveness_footer_label_text_processing"
+            android:textSize="30sp"
+            android:fontFamily="@font/gilroy_bold"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/active_liveness_verification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:lottie_rawRes="@raw/active_verification"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintStart_toStartOf="@id/camera"
+        app:layout_constraintEnd_toEndOf="@id/camera"
+        app:layout_constraintTop_toTopOf="@+id/camera"
+        app:layout_constraintBottom_toBottomOf="@id/camera"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

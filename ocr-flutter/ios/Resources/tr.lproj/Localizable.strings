@@ -1,0 +1,80 @@
+/* 
+   Localizable.strings
+   OCR Flutter Library
+   
+   Turkish localization for Udentify OCR SDK
+*/
+
+/* OCR Status View Titles */
+"udentify_ocr_status_view_title_default" = "OCR Tarama";
+"udentify_ocr_status_view_title_front_side" = "Ön Yüzü Tarayın";
+"udentify_ocr_status_view_title_back_side" = "Arka Yüzü Tarayın";
+"udentify_ocr_status_view_title_wait" = "Lütfen bekleyin...";
+
+/* OCR Button Titles */
+"udentify_ocr_button_retake_title" = "Yeniden Çek";
+"udentify_ocr_button_use_title" = "Kullan";
+"udentify_ocr_button_capture_title" = "Çek";
+
+/* OCR Instruction Texts */
+"udentify_ocr_instruction_text_front_side" = "Kimlik kartınızın ön yüzünü çerçeve içine hizalayın.";
+"udentify_ocr_instruction_text_back_side" = "Kimlik kartınızın arka yüzünü çerçeve içine hizalayın.";
+
+/* OCR Review Texts */
+"udentify_ocr_review_title_front_side" = "Ön Yüz Yakalandı";
+"udentify_ocr_review_title_back_side" = "Arka Yüz Yakalandı";
+"udentify_ocr_review_instruction_text_front_side" = "Fotoğrafın bulanık olmadığından emin olun.";
+"udentify_ocr_review_instruction_text_back_side" = "Fotoğrafın bulanık olmadığından emin olun.";
+
+/* OCR Document Types */
+"udentify_ocr_document_type_id_card" = "Kimlik";
+"udentify_ocr_document_type_passport" = "Pasaport";
+"udentify_ocr_document_type_drive_licence" = "Ehliyet";
+
+/* OCR Additional */
+"udentify_ocr_request_permission" = "Bu uygulama kamera izni gerektiriyor.";
+"udentifyocr_footer_button_text_scanning" = "Taranıyor...";
+"udentifyocr_scan_accept" = "KABUL ET";
+"udentifyocr_scan_back_side_your_id_card" = "Kimlik kartınızın arka yüzünü tarayın";
+
+/* Hologram Check Strings */
+"udentify_hologram_status_view_title_default" = "Hologramı kontrol edin";
+"udentifyocr_hologram" = "Hologram Kaydını Başlat";
+"udentifyocr_hologram_recording" = "Kaydediliyor...";
+"udentifyocr_scan_hologram" = "Hologramı Tara";
+
+/* Error Messages */
+"udentify_ocr_error_unknown" = "Beklenmeyen bir hata oluştu.";
+"ERR_OCR_API_ERROR" = "API çağrısı sırasında bir hata oluştu.";
+"ERR_OCR_OTHER_ERROR" = "Bilinmeyen bir hata oluştu.";
+"ERR_UNKNOWN" = "Bilinmeyen bir hata oluştu.";
+"ERR_OCR_MISSING_RESPONSE" = "OCR API yanıtı eksik.";
+"ERR_OCR_MISSING_DOCUMENT_LIVENESS_RESPONSE" = "Belge canlılığı API yanıtı eksik.";
+"ERR_OCR_MISSING_PARAMETERS" = "Gerekli OCR parametreleri eksik.";
+
+/* IQA Service */
+"udentify_iqa_screen_title" = "Görüntü kalitesi kontrol ediliyor";
+"udentify_iqa_button_next_title" = "İleri";
+"udentify_iqa_button_retake_title" = "Yeniden Çek";
+"udentify_iqa_progress_title" = "Lütfen bekleyin...";
+
+/* IQA Capture Quality Results */
+"udentify_iqa_front_capture_quality_failed_title" = "Ön yüz kalite kontrolü başarısız";
+"udentify_iqa_front_capture_invalid_message" = "Ön yüz geçersiz. Lütfen yeniden çekin.";
+"udentify_iqa_back_capture_quality_failed_title" = "Arka yüz kalite kontrolü başarısız";
+"udentify_iqa_back_capture_invalid_message" = "Arka yüz geçersiz. Lütfen yeniden çekin.";
+"udentify_iqa_front_capture_quality_success_title" = "Ön yüz geçti";
+"udentify_iqa_front_capture_success_message" = "Devam etmek için İleri'ye dokunun.";
+"udentify_iqa_back_capture_quality_success_title" = "Arka yüz geçti";
+"udentify_iqa_back_capture_success_message" = "Devam etmek için İleri'ye dokunun.";
+"udentify_iqa_reason_title" = "Sebep";
+
+/* IQA Server Side Error Responses */
+"err_iqa_card_not_detected" = "Kart algılanamadı";
+"err_iqa_card_not_classified" = "Yanlış belge türü. API çağrısı sırasında bir hata oluştu.";
+"err_iqa_card_forgery_detected" = "Sahtecilik tespit edildi";
+"err_iqa_blur_detected" = "Görüntü bulanık";
+"err_iqa_glare_detected" = "Parlama tespit edildi";
+"err_iqa_holo_quality_error" = "Hologram verileri engelliyor";
+"err_iqa_image_not_saved" = "Görüntü kaydedilmedi";
+"err_iqa_invalid_params" = "Geçersiz IQA parametreleri";

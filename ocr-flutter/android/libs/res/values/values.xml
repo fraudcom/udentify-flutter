@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="udentify_ocr_btn_text_color">#FFFFFF</color>
+    <color name="udentify_ocr_card_mask_view_background_color">#2D2D2D</color>
+    <color name="udentify_ocr_card_mask_view_stroke_color">#FFFFFF</color>
+    <color name="udentify_ocr_footer_btn_background_color">#2D2D2D</color>
+    <color name="udentify_ocr_footer_btn_border_stroke_color">@android:color/transparent</color>
+    <color name="udentify_ocr_footer_btn_color_error">#FF0000</color>
+    <color name="udentify_ocr_footer_btn_color_success">#00FF00</color>
+    <color name="udentify_ocr_footer_btn_text_color">#FF0000</color>
+    <color name="udentify_ocr_id_tur_background_color">#D1D4DA</color>
+    <color name="udentify_ocr_mask_border_stroke_color">#00FFFFFF</color>
+    <color name="udentify_ocr_mask_card_color">#00000000</color>
+    <color name="udentify_ocr_mask_layer_background_color">#CC000000</color>
+    <color name="udentify_ocr_retake_btn_background_color">#FF3B30</color>
+    <color name="udentify_ocr_retake_btn_border_stroke_color">#FFFFFF</color>
+    <color name="udentify_ocr_retake_btn_text_color">#FFFFFF</color>
+    <color name="udentify_ocr_use_btn_background_color">#007AFF</color>
+    <color name="udentify_ocr_use_btn_border_stroke_color">@android:color/transparent</color>
+    <color name="udentify_ocr_use_btn_text_color">#FFFFFF</color>
+    <dimen name="udentify_ocr_footer_btn_border_corner_radius">8dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_border_stroke_width">3dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_height">70dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_leading">16dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_trailing">16dp</dimen>
+    <dimen name="udentify_ocr_mask_border_corner_radius">9dp</dimen>
+    <dimen name="udentify_ocr_mask_border_stroke_width">0dp</dimen>
+    <dimen name="udentify_ocr_mask_horizontal_offset">0dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_border_corner_radius">8dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_border_stroke_width">2dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_height">70dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_leading">10dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_trailing">16dp</dimen>
+    <dimen name="udentify_ocr_use_btn_border_corner_radius">8dp</dimen>
+    <dimen name="udentify_ocr_use_btn_border_stroke_width">0dp</dimen>
+    <dimen name="udentify_ocr_use_btn_height">70dp</dimen>
+    <dimen name="udentify_ocr_use_btn_leading">16dp</dimen>
+    <dimen name="udentify_ocr_use_btn_trailing">10dp</dimen>
+    <string name="ERR_CAMERA_REASON_DISCONNECTED">ERR_CAMERA_REASON_DISCONNECTED</string>
+    <string name="ERR_CAMERA_REASON_FAILED_TO_CONNECT">ERR_CAMERA_REASON_FAILED_TO_CONNECT</string>
+    <string name="ERR_CAMERA_REASON_FAILED_TO_START_PREVIEW">ERR_CAMERA_REASON_FAILED_TO_START_PREVIEW</string>
+    <string name="ERR_CAMERA_REASON_NO_CAMERA">ERR_CAMERA_REASON_NO_CAMERA</string>
+    <string name="ERR_CAMERA_REASON_PICTURE_FAILED">ERR_CAMERA_REASON_PICTURE_FAILED</string>
+    <string name="ERR_CAMERA_REASON_UNKNOWN">ERR_CAMERA_REASON_UNKNOWN</string>
+    <string name="ERR_CAMERA_REASON_VIDEO_FAILED">ERR_CAMERA_REASON_VIDEO_FAILED</string>
+    <string name="ERR_DOCUMENT_LIVENESS_DOCUMENT_PHOTO_NOT_FOUND">ERR_DOCUMENT_LIVENESS_DOCUMENT_PHOTO_NOT_FOUND</string>
+    <string name="ERR_DOCUMENT_LIVENESS_THRESHOLD_ERROR">ERR_DOCUMENT_LIVENESS_THRESHOLD_ERROR</string>
+    <string name="ERR_FAILED_DUE_TO_THRESHOLD" translatable="false">ERR_FAILED_DUE_TO_THRESHOLD</string>
+    <string name="ERR_FAILED_TO_TAKE_PHOTO">ERR_FAILED_TO_TAKE_PHOTO</string>
+    <string name="ERR_ID_CARD_PHOTO_MISSING">ERR_ID_CARD_PHOTO_MISSING</string>
+    <string name="ERR_INVALID_SERVER_RESPONSE" translatable="false">ERR_INVALID_SERVER_RESPONSE</string>
+    <string name="ERR_NO_LIVENESS_PROVIDED">ERR_NO_LIVENESS_PROVIDED</string>
+    <string name="ERR_SERVER_RESPONSE_EMPTY" translatable="false">ERR_SERVER_RESPONSE_EMPTY</string>
+    <string name="ERR_SERVER_TIMEOUT_EXCEPTION">ERR_SERVER_TIMEOUT_EXCEPTION</string>
+    <string name="ERR_UNKNOWN" translatable="false">ERR_UNKNOWN</string>
+    <string name="app_name">UdentifyOCR</string>
+    <string name="udentify_hologram_status_view_title_default">Check hologram</string>
+    <string name="udentify_ocr_button_capture_title">Capture</string>
+    <string name="udentify_ocr_button_retake_title">Retake</string>
+    <string name="udentify_ocr_button_use_title">Use</string>
+    <string name="udentify_ocr_instruction_text_back_side">Align your ID’s back within the on-screen frame.</string>
+    <string name="udentify_ocr_instruction_text_front_side">Align your ID’s front within the on-screen frame.</string>
+    <string name="udentify_ocr_request_permission">This app needs camera permission.</string>
+    <string name="udentify_ocr_review_instruction_text_back_side">Make sure the photo is not blurred.</string>
+    <string name="udentify_ocr_review_instruction_text_front_side">Make sure the photo is not blurred.</string>
+    <string name="udentify_ocr_review_title_back_side">Back side captured</string>
+    <string name="udentify_ocr_review_title_front_side">Front side captured</string>
+    <string name="udentify_ocr_status_view_title_back_side">Scan Back Side</string>
+    <string name="udentify_ocr_status_view_title_default">Scan OCR</string>
+    <string name="udentify_ocr_status_view_title_front_side">Scan Front Side</string>
+    <string name="udentifyocr_footer_button_text_scanning">Scanning...</string>
+    <string name="udentifyocr_hologram">Start Hologram Recording</string>
+    <string name="udentifyocr_hologram_recording">Recording...</string>
+    <string name="udentifyocr_scan_accept">ACCEPT</string>
+    <string name="udentifyocr_scan_back_side_your_id_card">Scan back side of your ID card</string>
+    <string name="udentifyocr_scan_hologram">Scan Hologram</string>
+    <string name="udentifyocr_scan_type_driver_licence">OCR_</string>
+    <string name="udentifyocr_scan_type_id_card">OCR_ID_UPLOAD</string>
+    <string name="udentifyocr_scan_type_passport">OCR_PASSPORT_UPLOAD</string>
+    <string name="udentifyocr_scan_your_id_card">Scan your ID card</string>
+    <style name="InstructionLabelStyle">
+        <item name="android:fontFamily"/>
+        <item name="android:textColor">@color/udentify_ocr_btn_text_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <style name="ReviewInstructionLabelStyle">
+        <item name="android:fontFamily"/>
+        <item name="android:textColor">@color/udentify_ocr_btn_text_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <style name="ReviewScreenCard">
+        <item name="strokeColor">#00ACACAC</item>
+        <item name="strokeWidth">3dp</item>
+    </style>
+    <style name="ReviewScreenCardRoundedCorners">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+    </style>
+    <style name="ReviewTitleAndInstructionLabelsLayoutStyle">
+        <item name="layout_constraintVertical_bias">0.15</item>
+    </style>
+    <style name="ReviewTitleLabelStyle">
+        <item name="android:fontFamily">@font/gilroy_bold</item>
+        <item name="android:textColor">@color/udentify_ocr_btn_text_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <style name="TitleAndInstructionLabelsLayoutStyle">
+        <item name="layout_constraintVertical_bias">0.15</item>
+    </style>
+    <style name="TitleLabelStyle">
+        <item name="android:fontFamily">@font/gilroy_bold</item>
+        <item name="android:textColor">@color/udentify_ocr_btn_text_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <style name="UdentifyCardMaskView">
+        <item name="android:alpha">0.5</item>
+    </style>
+    <style name="UdentifyFooterButtonStyle">
+        <item name="android:backgroundTint">@color/udentify_ocr_footer_btn_background_color</item>
+        <item name="strokeColor">@color/udentify_ocr_footer_btn_border_stroke_color</item>
+        <item name="strokeWidth">@dimen/udentify_ocr_footer_btn_border_stroke_width</item>
+        <item name="cornerRadius">@dimen/udentify_ocr_footer_btn_border_corner_radius</item>
+        <item name="android:layout_height">@dimen/udentify_ocr_footer_btn_height</item>
+        <item name="android:layout_marginStart">@dimen/udentify_ocr_footer_btn_leading</item>
+        <item name="android:layout_marginEnd">@dimen/udentify_ocr_footer_btn_trailing</item>
+        <item name="android:fontFamily">@font/gilroy_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/udentify_ocr_footer_btn_text_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+    </style>
+    <style name="UdentifyRetakeButtonStyle">
+        <item name="android:backgroundTint">@color/udentify_ocr_retake_btn_background_color</item>
+        <item name="strokeColor">@color/udentify_ocr_retake_btn_border_stroke_color</item>
+        <item name="strokeWidth">@dimen/udentify_ocr_retake_btn_border_stroke_width</item>
+        <item name="cornerRadius">@dimen/udentify_ocr_retake_btn_border_corner_radius</item>
+        <item name="android:layout_height">@dimen/udentify_ocr_retake_btn_height</item>
+        <item name="android:layout_marginStart">@dimen/udentify_ocr_retake_btn_leading</item>
+        <item name="android:layout_marginEnd">@dimen/udentify_ocr_retake_btn_trailing</item>
+        <item name="android:fontFamily">@font/gilroy_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/udentify_ocr_retake_btn_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+    </style>
+    <style name="UdentifyUseButtonStyle">
+        <item name="android:backgroundTint">@color/udentify_ocr_use_btn_background_color</item>
+        <item name="strokeColor">@color/udentify_ocr_use_btn_border_stroke_color</item>
+        <item name="strokeWidth">@dimen/udentify_ocr_use_btn_border_stroke_width</item>
+        <item name="cornerRadius">@dimen/udentify_ocr_use_btn_border_corner_radius</item>
+        <item name="android:layout_height">@dimen/udentify_ocr_use_btn_height</item>
+        <item name="android:layout_marginStart">@dimen/udentify_ocr_use_btn_leading</item>
+        <item name="android:layout_marginEnd">@dimen/udentify_ocr_use_btn_trailing</item>
+        <item name="android:fontFamily">@font/gilroy_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/udentify_ocr_use_btn_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:lines">1</item>
+    </style>
+</resources>

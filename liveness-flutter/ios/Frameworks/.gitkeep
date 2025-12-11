@@ -1,0 +1,7 @@
+# Place Udentify SDK xcframeworks here
+# 
+# Expected files:
+# - UdentifyFace.xcframework
+# - Any other required Udentify SDK xcframeworks
+#
+# These xcframeworks will be referenced in the liveness_flutter.podspec file

@@ -1,0 +1,30 @@
+name: ocr_flutter
+description: A comprehensive Flutter plugin for OCR ID verification using Udentify's SDK. Supports document scanning, hologram verification, and document liveness detection.
+version: 0.1.0
+homepage: https://github.com/your-repo/ocr-flutter
+repository: https://github.com/your-repo/ocr-flutter
+issue_tracker: https://github.com/your-repo/ocr-flutter/issues
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.ocr_flutter
+        pluginClass: OcrFlutterPlugin
+      ios:
+        pluginClass: OcrFlutterPlugin

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Udentify OCR SDK Color Overrides -->
+    <!-- These colors will be dynamically updated by the Flutter plugin -->
+    
+    <!-- Card Mask View Colors -->
+    <color name="udentify_ocr_card_mask_view_stroke_color">#CCFFFFFF</color>
+    <color name="udentify_ocr_card_mask_view_background_color">#844EE3</color>
+    
+    <!-- Mask View Colors -->
+    <color name="udentify_ocr_mask_layer_background_color">#CC000000</color>
+    <color name="udentify_ocr_mask_card_color">#00000000</color>
+    <color name="udentify_ocr_mask_border_stroke_color">#00FFFFFF</color>
+    
+    <!-- OCR Card Preview Colors -->
+    <color name="udentify_ocr_id_tur_background_color">#D1D4DA</color>
+    
+    <!-- Button Text Colors -->
+    <color name="udentify_ocr_btn_text_color">#FFFFFF</color>
+    
+    <!-- Footer Button Style Colors -->
+    <color name="udentify_ocr_footer_btn_background_color">#844EE3</color>
+    <color name="udentify_ocr_footer_btn_border_stroke_color">@android:color/transparent</color>
+    <color name="udentify_ocr_footer_btn_text_color">#FFFFFF</color>
+    <color name="udentify_ocr_footer_btn_color_success">#4CD964</color>
+    <color name="udentify_ocr_footer_btn_color_error">#FF3B30</color>
+    
+    <!-- Use Button Style Colors -->
+    <color name="udentify_ocr_use_btn_background_color">#844EE3</color>
+    <color name="udentify_ocr_use_btn_border_stroke_color">@android:color/transparent</color>
+    <color name="udentify_ocr_use_btn_text_color">#FFFFFF</color>
+    
+    <!-- Retake Button Style Colors -->
+    <color name="udentify_ocr_retake_btn_background_color">@android:color/transparent</color>
+    <color name="udentify_ocr_retake_btn_border_stroke_color">#844EE3</color>
+    <color name="udentify_ocr_retake_btn_text_color">#FFFFFF</color>
+</resources>

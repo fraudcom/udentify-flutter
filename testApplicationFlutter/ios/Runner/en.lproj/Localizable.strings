@@ -1,0 +1,15 @@
+/* 
+ * Localizable.strings (English)
+ * Test Application Flutter
+ *
+ * Application-specific localization strings only.
+ * Framework-specific strings are now in each framework's Resources folder.
+ */
+
+/* Basic App Strings */
+"app_name" = "Test Application Flutter";
+"ok" = "OK";
+"cancel" = "Cancel";
+"done" = "Done";
+"next" = "Next";
+"back" = "Back";

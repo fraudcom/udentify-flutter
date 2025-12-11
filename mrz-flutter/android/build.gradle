@@ -1,0 +1,96 @@
+group 'com.mrzflutter.mrz_flutter'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.8.22'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // JitPack repository for Tesseract4Android
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.mrzflutter.mrz_flutter'
+    compileSdk 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        disable 'GradleCompatible'
+    }
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+        
+        // MRZ dependencies (same as React Native)
+        implementation 'com.github.adaptech-cz:Tesseract4Android:2.1.0'
+        implementation 'org.jmrtd:jmrtd:0.7.17'
+        implementation 'edu.ucar:jj2000:5.2'
+        implementation 'com.github.mhshams:jnbis:1.1.0'
+        
+        // AndroidX dependencies
+        implementation 'androidx.appcompat:appcompat:1.4.0'
+        implementation 'androidx.fragment:fragment-ktx:1.4.0'
+        implementation 'androidx.core:core-ktx:1.7.0'
+        
+        // Udentify SDK dependencies - compile-only so they're available but not packaged in plugin AAR
+        compileOnly fileTree(dir: 'libs', include: ['*.aar'])
+        
+        // The main app will provide these at runtime
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+
+            testLogging {
+               events "passed", "skipped", "failed", "standardOut", "standardError"
+               outputs.upToDateWhen {false}
+               showStandardStreams = true
+            }
+        }
+    }
+}
