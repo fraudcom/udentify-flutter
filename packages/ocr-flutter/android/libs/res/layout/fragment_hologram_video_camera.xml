@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/videoCameraContainerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTintMode="src_over"
+        android:keepScreenOn="true"
+        app:cameraAudio="off"
+        app:cameraAutoFocusResetDelay="0"
+        app:cameraFacing="back"
+        app:cameraFlash="off"
+        app:cameraGestureScrollHorizontal="exposureCorrection"
+        app:cameraPictureSizeBiggest="true"
+        app:cameraUseDeviceOrientation="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <io.udentify.android.ocr.activities.MaskView
+        android:id="@+id/mask_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <io.udentify.android.ocr.activities.CardMaskView
+        android:id="@+id/card_mask_view"
+        style="@style/UdentifyCardMaskView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hologram_record_button"
+        style="@style/UdentifyFooterButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="40dp"
+        android:backgroundTintMode="src_over"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/udentify_hologram_status_view_title_default"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/hologram_progress_bar_layout"
+        style="@style/UdentifyFooterButtonStyle"
+        android:layout_width="0dp"
+        android:layout_marginBottom="40dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/hologram_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:visibility="invisible"
+            app:indicatorColor="@color/udentify_ocr_footer_btn_color_success"
+            app:trackColor="@color/udentify_ocr_footer_btn_background_color"
+            app:trackCornerRadius="@dimen/udentify_ocr_footer_btn_border_corner_radius"
+            app:trackThickness="@dimen/udentify_ocr_footer_btn_height" />
+
+        <TextView
+            android:id="@+id/hologram_progress_bar_text"
+            style="@style/UdentifyFooterButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:text="@string/udentifyocr_hologram_recording"/>
+
+    </RelativeLayout>
+
+    <!--<FrameLayout
+        android:id="@+id/back_button_layout"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_button_circle" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:backgroundTintMode="src_over"
+            android:src="@drawable/back_button_arrow" />
+
+    </FrameLayout>-->
+
+    <TextView
+        android:id="@+id/hologram_information_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/udentifyocr_scan_hologram"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

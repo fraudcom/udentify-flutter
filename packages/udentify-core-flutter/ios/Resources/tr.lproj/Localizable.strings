@@ -1,0 +1,16 @@
+/* 
+   Localizable.strings
+   Udentify Core Flutter
+   
+   Turkish localization for Udentify Commons SDK
+*/
+
+/* Country Names */
+"udentify_commons_country_usa" = "ABD";
+"udentify_commons_country_gbr" = "Birleşik Krallık";
+"udentify_commons_country_col" = "Kolombiya";
+"udentify_commons_country_tur" = "Türkiye";
+"udentify_commons_country_esp" = "İspanya";
+"udentify_commons_country_bra" = "Brezilya";
+"udentify_commons_country_per" = "Peru";
+"udentify_commons_country_ecu" = "Ekvador";

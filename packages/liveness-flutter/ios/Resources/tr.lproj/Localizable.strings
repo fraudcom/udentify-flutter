@@ -1,0 +1,39 @@
+/* 
+   Localizable.strings
+   liveness_flutter
+
+   Turkish localization for UdentifyFACE SDK
+*/
+
+/* General strings */
+"udentifyface_header_text" = "Selfie Çek";
+"udentifyface_footer_button_text_default" = "Selfie Çek";
+"udentifyface_footer_button_text_progressing" = "Canlılık Kontrolü";
+"udentifyface_footer_button_text_result" = "Canlılık";
+
+/* Face detection messages */
+"udentifyface_message_face_too_big" = "Yüzünüz çok yakın";
+"udentifyface_message_face_too_small" = "Yüzünüz çok uzak";
+"udentifyface_message_face_not_found" = "Yüz bulunamadı";
+"udentifyface_message_too_many_faces" = "Birden fazla yüz bulundu";
+"udentifyface_message_face_angled" = "Yüzünüzü kameraya çevirin";
+"udentifyface_message_head_angled" = "Başınız kamera ile paralel olmalı";
+"udentifyface_message_face_off_center" = "Yüzünüzü daire içinde pozisyonlayın";
+"udentifyface_message_mask_detected" = "Lütfen maskenizi çıkarın";
+
+/* Active/Hybrid Liveness specific strings */
+"udentifyface_active_liveness_footer_button_text_recording" = "Kaydediliyor...";
+"udentifyface_active_liveness_footer_button_text_processing" = "İşleniyor...";
+"udentifyface_active_liveness_footer_button_text_default" = "İlerle";
+"udentifyface_active_liveness_footer_button_text_result" = "Bitti";
+"udentifyface_active_liveness_footer_label_text_processing" = "Active liveness yapılıyor.\nLütfen bekleyin...";
+
+/* Gesture instructions */
+"udentifyface_gesture_text_move_head_to_left" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında başınızı sola çevirin";
+"udentifyface_gesture_text_move_head_to_right" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında başınızı sağa çevirin";
+"udentifyface_gesture_text_move_head_to_up" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında başınızı yukarı kaldırın";
+"udentifyface_gesture_text_move_head_to_down" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında başınızı aşağı çevirin";
+"udentifyface_gesture_text_blink_once" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında bir kez göz kırpın";
+"udentifyface_gesture_text_blink_twice" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında iki kez göz kırpın";
+"udentifyface_gesture_text_blink_thrice" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında üç kez göz kırpın";
+"udentifyface_gesture_text_smile" = "İlerle tuşuna basın, ardından geri sayım tamamlandığında gülümseyin";

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="udentifyface_bg_color">#FF844EE3</color>
+    <color name="udentifyface_btn_color">#844EE3</color>
+    <color name="udentifyface_btn_color_error">#FF3B30</color>
+    <color name="udentifyface_btn_color_success">#4CD964</color>
+    <color name="udentifyface_btn_text_color">#FFFFFF</color>
+    <color name="udentifyface_btn_text_color_error">#FFFFFF</color>
+    <color name="udentifyface_btn_text_color_success">#FFFFFF</color>
+    <color name="udentifyface_gesture_text_bg_color">#66808080</color>
+    <color name="udentifyface_progress_background_color">#808080</color>
+    <color name="udentifyface_transparent">#00000000</color>
+    <dimen name="udentify_face_selfie_button_corner_radius">8dp</dimen>
+    <dimen name="udentify_selfie_button_bottom_margin">40dp</dimen>
+    <dimen name="udentify_selfie_button_height">70dp</dimen>
+    <dimen name="udentify_selfie_button_horizontal_margin">16dp</dimen>
+    <dimen name="udentifyface_gesture_font_size">30sp</dimen>
+    <string name="ERR_ACTIVE_LIVENESS_FAILED" translatable="false">ERR_ACTIVE_LIVENESS_FAILED</string>
+    <string name="ERR_ACTIVE_LIVENESS_GESTURE_FAILED" translatable="false">ERR_ACTIVE_LIVENESS_GESTURE_FAILED</string>
+    <string name="ERR_ACTIVE_LIVENESS_TRANSACTION_NULL" translatable="false">ERR_ACTIVE_LIVENESS_TRANSACTION_NULL</string>
+    <string name="ERR_AV_DUP_SUSPECT_NAME" translatable="false">ERR_AV_DUP_SUSPECT_NAME</string>
+    <string name="ERR_AV_MISSING_PARAMS" translatable="false">ERR_AV_MISSING_PARAMS</string>
+    <string name="ERR_CAMERA" translatable="false">ERR_CAMERA</string>
+    <string name="ERR_CAMERA2_NOT_SUPPORTED" translatable="false">ERR_CAMERA2_NOT_SUPPORTED</string>
+    <string name="ERR_CAMERA_PERMISSION_REQUIRED" translatable="false">ERR_CAMERA_PERMISSION_REQUIRED</string>
+    <string name="ERR_CAMERA_REASON_DISCONNECTED">ERR_CAMERA_REASON_DISCONNECTED</string>
+    <string name="ERR_CAMERA_REASON_FAILED_TO_CONNECT">ERR_CAMERA_REASON_FAILED_TO_CONNECT</string>
+    <string name="ERR_CAMERA_REASON_FAILED_TO_START_PREVIEW">ERR_CAMERA_REASON_FAILED_TO_START_PREVIEW</string>
+    <string name="ERR_CAMERA_REASON_NO_CAMERA">ERR_CAMERA_REASON_NO_CAMERA</string>
+    <string name="ERR_CAMERA_REASON_PICTURE_FAILED">ERR_CAMERA_REASON_PICTURE_FAILED</string>
+    <string name="ERR_CAMERA_REASON_UNKNOWN">ERR_CAMERA_REASON_UNKNOWN</string>
+    <string name="ERR_CAMERA_REASON_VIDEO_FAILED">ERR_CAMERA_REASON_VIDEO_FAILED</string>
+    <string name="ERR_CANNOT_ACCESS_CAMERA" translatable="false">ERR_CANNOT_ACCESS_CAMERA</string>
+    <string name="ERR_FACEKEY_MATCH_SCORE_NOT_CALCULATED">ERR_FACEKEY_MATCH_SCORE_NOT_CALCULATED</string>
+    <string name="ERR_FACEKEY_NOT_ALIVE" translatable="false">ERR_FACEKEY_NOT_ALIVE</string>
+    <string name="ERR_FACEKEY_NOT_CONSISTENT" translatable="false">ERR_FACEKEY_NOT_CONSISTENT</string>
+    <string name="ERR_FACEKEY_NO_FACE" translatable="false">ERR_FACEKEY_NO_FACE</string>
+    <string name="ERR_FACEKEY_NO_MATCH" translatable="false">ERR_FACEKEY_NO_MATCH</string>
+    <string name="ERR_FACEKEY_NO_SUSPECT" translatable="false">ERR_FACEKEY_NO_SUSPECT</string>
+    <string name="ERR_FACEKEY_TIMEOUT" translatable="false">ERR_FACEKEY_TIMEOUT</string>
+    <string name="ERR_FACEKEY_TOO_MANY_FACES" translatable="false">ERR_FACEKEY_TOO_MANY_FACES</string>
+    <string name="ERR_FACE_CREDENTIALS_MISSING" translatable="false">ERR_FACE_CREDENTIALS_MISSING</string>
+    <string name="ERR_FACE_PHOTO_MISSING">ERR_FACE_PHOTO_MISSING</string>
+    <string name="ERR_FAILED_DUE_TO_THRESHOLD" translatable="false">ERR_FAILED_DUE_TO_THRESHOLD</string>
+    <string name="ERR_FAILED_TO_PERFORM_LIVENESS" translatable="false">ERR_FAILED_TO_PERFORM_LIVENESS</string>
+    <string name="ERR_FAILED_TO_TAKE_SELFIE">ERR_FAILED_TO_TAKE_SELFIE</string>
+    <string name="ERR_INVALID_INPUT" translatable="false">ERR_INVALID_INPUT</string>
+    <string name="ERR_INVALID_SERVER_RESPONSE" translatable="false">ERR_INVALID_SERVER_RESPONSE</string>
+    <string name="ERR_LOCK_CAMERA_CLOSING" translatable="false">ERR_LOCK_CAMERA_CLOSING</string>
+    <string name="ERR_LOCK_CAMERA_OPENING" translatable="false">ERR_LOCK_CAMERA_OPENING</string>
+    <string name="ERR_READING_IMAGE_FILE" translatable="false">ERR_READING_IMAGE_FILE</string>
+    <string name="ERR_READING_VIDEO_FILE" translatable="false">ERR_READING_VIDEO_FILE</string>
+    <string name="ERR_READ_EXTERNAL_STORAGE_PERMISSION_REQUIRED" translatable="false">ERR_READ_EXTERNAL_STORAGE_PERMISSION_REQUIRED</string>
+    <string name="ERR_SERVER_RESPONSE_EMPTY" translatable="false">ERR_SERVER_RESPONSE_EMPTY</string>
+    <string name="ERR_SERVER_RESPONSE_PARAMS_EMPTY">ERR_SERVER_RESPONSE_PARAMS_EMPTY</string>
+    <string name="ERR_SERVER_TIMEOUT_EXCEPTION">ERR_SERVER_TIMEOUT_EXCEPTION</string>
+    <string name="ERR_UNKNOWN" translatable="false">ERR_UNKNOWN</string>
+    <string name="ERR_USER_NOT_FOUND" translatable="false">ERR_USER_NOT_FOUND</string>
+    <string name="ERR_WRITE_EXTERNAL_STORAGE_PERMISSION_REQUIRED" translatable="false">ERR_WRITE_EXTERNAL_STORAGE_PERMISSION_REQUIRED</string>
+    <string name="INFO_FACE_TOO_LARGE" translatable="false">INFO_FACE_TOO_LARGE</string>
+    <string name="INFO_FACE_TOO_SMALL" translatable="false">INFO_FACE_TOO_SMALL</string>
+    <string name="INFO_GET_READY" translatable="false">INFO_GET_READY</string>
+    <string name="INFO_NO_FACE_IN_VIDEO" translatable="false">INFO_NO_FACE_IN_VIDEO</string>
+    <string name="INFO_PROCESSING" translatable="false">INFO_PROCESSING</string>
+    <string name="INFO_TOO_MANY_IN_VIDEO" translatable="false">INFO_TOO_MANY_IN_VIDEO</string>
+    <string name="align_face">Please align your face with the frame</string>
+    <string name="app_name">UdentifyFACE</string>
+    <string name="face_recognition_info">Introduce Your Face to System</string>
+    <string name="face_recognition_tutorial_header">Introduce Your Face to System</string>
+    <string name="face_recognition_tutorial_info">In order to introduce\nyour face to the system\nput your face within the stated\narea and wait a while.</string>
+    <string name="udentify_authenticated" translatable="false">AUTHENTICATED</string>
+    <string name="udentify_authentication_failed" translatable="false">AUTHENTICATION_FAILED</string>
+    <string name="udentify_error" translatable="false">ERROR</string>
+    <string name="udentify_liveness_failed" translatable="false">LIVENESS_FAILED</string>
+    <string name="udentify_registered" translatable="false">REGISTERED</string>
+    <string name="udentify_registration_failed" translatable="false">REGISTRATION_FAILED</string>
+    <string name="udentify_request_permission">This app needs camera permission.</string>
+    <string name="udentify_sucess" translatable="false">SUCCESS</string>
+    <string name="udentifyface_active_liveness_footer_button_text_default">Center your face</string>
+    <string name="udentifyface_active_liveness_footer_button_text_processing">Processing...</string>
+    <string name="udentifyface_active_liveness_footer_button_text_recording">Recording...</string>
+    <string name="udentifyface_active_liveness_footer_button_text_result">Next step</string>
+    <string name="udentifyface_active_liveness_footer_label_text_processing">Performing active liveness.\nPlease wait...</string>
+    <string name="udentifyface_footer_button_text_default">Take Selfie</string>
+    <string name="udentifyface_footer_button_text_progressing">Liveness Check</string>
+    <string name="udentifyface_footer_button_text_result">Liveness</string>
+    <string name="udentifyface_gesture_text_blink_once">Blink once</string>
+    <string name="udentifyface_gesture_text_blink_thrice">Blink 3 times</string>
+    <string name="udentifyface_gesture_text_blink_twice">Blink twice</string>
+    <string name="udentifyface_gesture_text_move_head_to_down">Tilt Down</string>
+    <string name="udentifyface_gesture_text_move_head_to_left">Turn Left</string>
+    <string name="udentifyface_gesture_text_move_head_to_right">Turn Right</string>
+    <string name="udentifyface_gesture_text_move_head_to_up">Tilt Up</string>
+    <string name="udentifyface_gesture_text_smile">Smile</string>
+    <string name="udentifyface_message_eyes_closed">Open your eyes</string>
+    <string name="udentifyface_message_face_angled">Face to Camera</string>
+    <string name="udentifyface_message_face_not_found">Face not found</string>
+    <string name="udentifyface_message_face_off_center">Center your face</string>
+    <string name="udentifyface_message_face_too_big">Move Back</string>
+    <string name="udentifyface_message_face_too_small">Move Closer</string>
+    <string name="udentifyface_message_head_angled">Face to Camera</string>
+    <string name="udentifyface_message_mask_detected">Remove Mask</string>
+    <string name="udentifyface_message_photo_upload_failed">Photo upload failed</string>
+    <string name="udentifyface_message_photo_upload_successful">Photo uploaded successfully</string>
+    <string name="udentifyface_message_too_many_faces">Too many faces</string>
+    <style name="UdentifyBackground">
+        <item name="android:color">@color/udentifyface_bg_color</item>
+        <item name="android:src">@drawable/bg_clear</item>
+    </style>
+    <style name="UdentifySelfieButton" parent="Platform.MaterialComponents">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <declare-styleable name="FaceMaskView">
+        <attr format="dimension" name="stroke_width"/>
+        <attr format="color" name="color_success"/>
+        <attr format="color" name="color_failure"/>
+        <attr format="color" name="color_detection"/>
+        <attr format="color" name="color_default"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/imageContainerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+    <LinearLayout
+        android:id="@+id/review_title_and_instruction_labels_layout"
+        style="@style/ReviewTitleAndInstructionLabelsLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/review_title_label"
+            style="@style/ReviewTitleLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/udentify_ocr_review_title_front_side" />
+
+        <TextView
+            android:id="@+id/review_instruction_label"
+            style="@style/ReviewInstructionLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/udentify_ocr_review_instruction_text_front_side" />
+
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_result"
+        style="@style/ReviewScreenCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tur_card_mask_back"
+        app:contentPadding="-5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/ReviewScreenCardRoundedCorners" />
+
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/udentify_ocr_button_use"
+            style="@style/UdentifyUseButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:backgroundTintMode="src_over"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/udentify_ocr_button_use_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/udentify_ocr_button_retake"
+            style="@style/UdentifyRetakeButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:backgroundTintMode="src_over"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/udentify_ocr_button_retake_title" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/image_progress_bar_layout"
+        style="@style/UdentifyFooterButtonStyle"
+        android:layout_width="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_buttons"
+        app:layout_constraintEnd_toEndOf="@+id/layout_buttons"
+        app:layout_constraintStart_toStartOf="@+id/layout_buttons"
+        app:layout_constraintTop_toTopOf="@+id/layout_buttons">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/image_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:visibility="invisible"
+            app:indicatorColor="@color/udentify_ocr_footer_btn_color_success"
+            app:trackColor="@color/udentify_ocr_footer_btn_background_color"
+            app:trackCornerRadius="@dimen/udentify_ocr_footer_btn_border_corner_radius"
+            app:trackThickness="@dimen/udentify_ocr_footer_btn_height" />
+
+        <TextView
+            android:id="@+id/image_progress_bar_text"
+            style="@style/UdentifyFooterButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:text="@string/udentifyocr_footer_button_text_scanning" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ocrInformationTitlePreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/udentify_ocr_status_view_title_default"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
