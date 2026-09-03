@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    English (default) string overrides for the Udentify OCR SDK.
+    Resource names must match the ones baked into libs/ocr-*.aar (see
+    libs/res/values/values.xml) so Gradle resource merging substitutes
+    these values for the AAR's defaults. Device/app locale then picks
+    this file or values-tr/strings.xml automatically at runtime.
+-->
+<resources>
+    <string name="app_name">UdentifyOCR</string>
+
+    <!-- OCR Status View Titles -->
+    <string name="udentify_ocr_status_view_title_default">Scan OCR</string>
+    <string name="udentify_ocr_status_view_title_front_side">Scan Front Side</string>
+    <string name="udentify_ocr_status_view_title_back_side">Scan Back Side</string>
+
+    <!-- OCR Button Titles -->
+    <string name="udentify_ocr_button_retake_title">Retake</string>
+    <string name="udentify_ocr_button_use_title">Use</string>
+    <string name="udentify_ocr_button_capture_title">Capture</string>
+
+    <!-- OCR Instruction Texts -->
+    <string name="udentify_ocr_instruction_text_front_side">Align your ID’s front within the on-screen frame.</string>
+    <string name="udentify_ocr_instruction_text_back_side">Align your ID’s back within the on-screen frame.</string>
+
+    <!-- OCR Review Texts -->
+    <string name="udentify_ocr_review_title_front_side">Front side captured</string>
+    <string name="udentify_ocr_review_title_back_side">Back side captured</string>
+    <string name="udentify_ocr_review_instruction_text_front_side">Make sure the photo is not blurred.</string>
+    <string name="udentify_ocr_review_instruction_text_back_side">Make sure the photo is not blurred.</string>
+
+    <!-- OCR Additional -->
+    <string name="udentify_ocr_request_permission">This app needs camera permission.</string>
+    <string name="udentifyocr_footer_button_text_scanning">Scanning...</string>
+    <string name="udentifyocr_scan_accept">ACCEPT</string>
+    <string name="udentifyocr_scan_your_id_card">Scan your ID card</string>
+    <string name="udentifyocr_scan_back_side_your_id_card">Scan back side of your ID card</string>
+
+    <!-- Hologram Check Strings -->
+    <string name="udentify_hologram_status_view_title_default">Check hologram</string>
+    <string name="udentifyocr_hologram">Start Hologram Recording</string>
+    <string name="udentifyocr_hologram_recording">Recording...</string>
+    <string name="udentifyocr_scan_hologram">Scan Hologram</string>
+
+    <!-- Classifier strings -->
+    <string name="udentifyocr_classification_card_generic">card</string>
+    <string name="udentifyocr_classification_id_card">T.C. ID</string>
+    <string name="udentifyocr_classification_drivers_license">T.C. Driver’s License</string>
+    <string name="udentifyocr_classification_instruction_success">Document detected. Please hold still for a moment while we capture the image.</string>
+    <string name="udentifyocr_classification_instruction_unidentified">Document not detected. Please scan valid %s within the frame and try again.</string>
+    <string name="udentifyocr_classification_instruction_mismatch">"Document mismatched. Please scan valid %s within the frame and try again."</string>
+    <string name="udentifyocr_classification_instruction_mismatch_front">"Document mismatched. Please align front side of your %s properly within the frame and try again."</string>
+    <string name="udentifyocr_classification_instruction_mismatch_back">"Document mismatched. Please align back side of your %s properly within the frame and try again."</string>
+    <string name="udentifyocr_classification_footer_success">Scanning...</string>
+    <string name="udentifyocr_classification_footer_unidentified">Card unidentified</string>
+    <string name="udentifyocr_classification_footer_mismatch">Card mismatch</string>
+    <string name="udentifyocr_classification_footer_mismatch_front">Flip to the front side</string>
+    <string name="udentifyocr_classification_footer_mismatch_back">Flip to the back side</string>
+
+    <!-- Internal identifiers / error codes: not user-facing, keep untranslated -->
+    <string name="udentifyocr_scan_type_driver_licence" translatable="false">OCR_</string>
+    <string name="udentifyocr_scan_type_id_card" translatable="false">OCR_ID_UPLOAD</string>
+    <string name="udentifyocr_scan_type_passport" translatable="false">OCR_PASSPORT_UPLOAD</string>
+    <string name="ERR_CAMERA_REASON_DISCONNECTED" translatable="false">ERR_CAMERA_REASON_DISCONNECTED</string>
+    <string name="ERR_CAMERA_REASON_FAILED_TO_CONNECT" translatable="false">ERR_CAMERA_REASON_FAILED_TO_CONNECT</string>
+    <string name="ERR_CAMERA_REASON_FAILED_TO_START_PREVIEW" translatable="false">ERR_CAMERA_REASON_FAILED_TO_START_PREVIEW</string>
+    <string name="ERR_CAMERA_REASON_NO_CAMERA" translatable="false">ERR_CAMERA_REASON_NO_CAMERA</string>
+    <string name="ERR_CAMERA_REASON_PICTURE_FAILED" translatable="false">ERR_CAMERA_REASON_PICTURE_FAILED</string>
+    <string name="ERR_CAMERA_REASON_UNKNOWN" translatable="false">ERR_CAMERA_REASON_UNKNOWN</string>
+    <string name="ERR_CAMERA_REASON_VIDEO_FAILED" translatable="false">ERR_CAMERA_REASON_VIDEO_FAILED</string>
+    <string name="ERR_DOCUMENT_LIVENESS_DOCUMENT_PHOTO_NOT_FOUND" translatable="false">ERR_DOCUMENT_LIVENESS_DOCUMENT_PHOTO_NOT_FOUND</string>
+    <string name="ERR_DOCUMENT_LIVENESS_THRESHOLD_ERROR" translatable="false">ERR_DOCUMENT_LIVENESS_THRESHOLD_ERROR</string>
+    <string name="ERR_FAILED_DUE_TO_THRESHOLD" translatable="false">ERR_FAILED_DUE_TO_THRESHOLD</string>
+    <string name="ERR_FAILED_TO_TAKE_PHOTO" translatable="false">ERR_FAILED_TO_TAKE_PHOTO</string>
+    <string name="ERR_ID_CARD_PHOTO_MISSING" translatable="false">ERR_ID_CARD_PHOTO_MISSING</string>
+    <string name="ERR_INVALID_SERVER_RESPONSE" translatable="false">ERR_INVALID_SERVER_RESPONSE</string>
+    <string name="ERR_NO_LIVENESS_PROVIDED" translatable="false">ERR_NO_LIVENESS_PROVIDED</string>
+    <string name="ERR_SERVER_RESPONSE_EMPTY" translatable="false">ERR_SERVER_RESPONSE_EMPTY</string>
+    <string name="ERR_SERVER_TIMEOUT_EXCEPTION" translatable="false">ERR_SERVER_TIMEOUT_EXCEPTION</string>
+    <string name="ERR_UNKNOWN" translatable="false">ERR_UNKNOWN</string>
+</resources>

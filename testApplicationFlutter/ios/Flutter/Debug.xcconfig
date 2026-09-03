@@ -1,0 +1,8 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+// mrz_flutter's vendored GPUImage/UdentifyMRZ/TesseractOCRSDKiOS frameworks ship only
+// an x86_64 simulator slice (no arm64-simulator slice), so arm64 must be excluded for
+// simulator builds on Apple Silicon Macs. This overrides Generated.xcconfig's value,
+// which only excludes i386.
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = i386 arm64

@@ -1,0 +1,568 @@
+import Flutter
+import UIKit
+import AVFoundation
+
+// Import UdentifyFACE framework if available
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+import UdentifyFACE
+import UdentifyCommons
+#endif
+
+public class LivenessFlutterPlugin: NSObject, FlutterPlugin {
+  private var channel: FlutterMethodChannel?
+  private var currentViewController: UIViewController?
+  private var isInProgress = false
+  
+  public static func register(with registrar: FlutterPluginRegistrar) {
+    let channel = FlutterMethodChannel(name: "liveness_flutter", binaryMessenger: registrar.messenger())
+    let instance = LivenessFlutterPlugin()
+    instance.channel = channel
+    registrar.addMethodCallDelegate(instance, channel: channel)
+  }
+
+  public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    let method = call.method
+    
+    switch method {
+    case "checkPermissions":
+      checkPermissions(result: result)
+    case "requestPermissions":
+      requestPermissions(result: result)
+    case "startFaceRecognitionRegistration":
+      startFaceRecognitionRegistration(call: call, result: result)
+    case "startFaceRecognitionAuthentication":
+      startFaceRecognitionAuthentication(call: call, result: result)
+    case "startActiveLiveness":
+      startActiveLiveness(call: call, result: result)
+    case "startHybridLiveness":
+      startHybridLiveness(call: call, result: result)
+    case "registerUserWithPhoto":
+      registerUserWithPhoto(call: call, result: result)
+    case "authenticateUserWithPhoto":
+      authenticateUserWithPhoto(call: call, result: result)
+    case "cancelFaceRecognition":
+      cancelFaceRecognition(result: result)
+    case "isFaceRecognitionInProgress":
+      isFaceRecognitionInProgress(result: result)
+    case "addUserToList":
+      addUserToList(call: call, result: result)
+    default:
+      result(FlutterError(code: "UNIMPLEMENTED", 
+                         message: "Method not implemented: \(method)", 
+                         details: nil))
+    }
+  }
+  
+  private func checkPermissions(result: @escaping FlutterResult) {
+    // Check camera permission status
+    let cameraStatus = getCameraPermissionStatus()
+    
+    let permissions = [
+      "camera": cameraStatus,
+      "readPhoneState": "granted", // Not applicable on iOS
+      "internet": "granted" // Not applicable on iOS
+    ]
+    
+    result(permissions)
+  }
+  
+  private func requestPermissions(result: @escaping FlutterResult) {
+    // Request camera permission
+    requestCameraPermission { [weak self] in
+      self?.checkPermissions(result: result)
+    }
+  }
+  
+  private func startFaceRecognitionRegistration(call: FlutterMethodCall, result: @escaping FlutterResult) {
+// #if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard !isInProgress else {
+      result(FlutterError(code: "ALREADY_IN_PROGRESS", message: "Face recognition is already in progress", details: nil))
+      return
+    }
+    
+    guard let arguments = call.arguments as? [String: Any] else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    do {
+      let credentials = try parseFaceRecognizerCredentials(from: arguments)
+      
+      DispatchQueue.main.async { [weak self] in
+        guard let self = self else { return }
+        
+        let faceRecognizer = FaceRecognizer()
+        faceRecognizer.delegate = self
+        faceRecognizer.credentials = credentials
+        
+        let faceViewController = FaceCameraViewController()
+        faceViewController.faceRecognizer = faceRecognizer
+        faceViewController.method = .register
+        
+        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+          self.currentViewController = faceViewController
+          self.isInProgress = true
+          rootViewController.present(faceViewController, animated: true)
+          
+          result([
+            "status": "success",
+            "faceIDMessage": [
+              "success": true,
+              "message": "Face recognition registration started"
+            ]
+          ])
+        } else {
+          result(FlutterError(code: "NO_VIEW_CONTROLLER", message: "Could not find root view controller", details: nil))
+        }
+      }
+    } catch {
+      result(FlutterError(code: "CREDENTIAL_PARSING_FAILED", message: "Failed to parse credentials: \(error.localizedDescription)", details: nil))
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func startFaceRecognitionAuthentication(call: FlutterMethodCall, result: @escaping FlutterResult) {
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard !isInProgress else {
+      result(FlutterError(code: "ALREADY_IN_PROGRESS", message: "Face recognition is already in progress", details: nil))
+      return
+    }
+    
+    guard let arguments = call.arguments as? [String: Any] else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    do {
+      let credentials = try parseFaceRecognizerCredentials(from: arguments)
+      
+      DispatchQueue.main.async { [weak self] in
+        guard let self = self else { return }
+        
+        let faceRecognizer = FaceRecognizer()
+        faceRecognizer.delegate = self
+        faceRecognizer.credentials = credentials
+        
+        let faceViewController = FaceCameraViewController()
+        faceViewController.faceRecognizer = faceRecognizer
+        faceViewController.method = .authentication
+        
+        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+          self.currentViewController = faceViewController
+          self.isInProgress = true
+          rootViewController.present(faceViewController, animated: true)
+          
+          result([
+            "status": "success",
+            "faceIDMessage": [
+              "success": true,
+              "message": "Face recognition authentication started"
+            ]
+          ])
+        } else {
+          result(FlutterError(code: "NO_VIEW_CONTROLLER", message: "Could not find root view controller", details: nil))
+        }
+      }
+    } catch {
+      result(FlutterError(code: "CREDENTIAL_PARSING_FAILED", message: "Failed to parse credentials: \(error.localizedDescription)", details: nil))
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func startActiveLiveness(call: FlutterMethodCall, result: @escaping FlutterResult) {
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard !isInProgress else {
+      result(FlutterError(code: "ALREADY_IN_PROGRESS", message: "Active liveness is already in progress", details: nil))
+      return
+    }
+    
+    guard let arguments = call.arguments as? [String: Any] else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    do {
+      let credentials = try parseFaceRecognizerCredentials(from: arguments)
+      
+      DispatchQueue.main.async { [weak self] in
+        guard let self = self else { return }
+        
+        let activeLivenessViewController = ActiveLivenessViewController()
+        activeLivenessViewController.delegate = self
+        activeLivenessViewController.credentials = credentials
+        
+        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+          self.currentViewController = activeLivenessViewController
+          self.isInProgress = true
+          rootViewController.present(activeLivenessViewController, animated: true)
+          
+          result([
+            "status": "success",
+            "faceIDMessage": [
+              "success": true,
+              "message": "Active liveness started"
+            ]
+          ])
+        } else {
+          result(FlutterError(code: "NO_VIEW_CONTROLLER", message: "Could not find root view controller", details: nil))
+        }
+      }
+    } catch {
+      result(FlutterError(code: "CREDENTIAL_PARSING_FAILED", message: "Failed to parse credentials: \(error.localizedDescription)", details: nil))
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func startHybridLiveness(call: FlutterMethodCall, result: @escaping FlutterResult) {
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard !isInProgress else {
+      result(FlutterError(code: "ALREADY_IN_PROGRESS", message: "Hybrid liveness is already in progress", details: nil))
+      return
+    }
+    
+    guard let arguments = call.arguments as? [String: Any] else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    do {
+      let credentials = try parseFaceRecognizerCredentials(from: arguments)
+      
+      DispatchQueue.main.async { [weak self] in
+        guard let self = self else { return }
+        
+        let activeLivenessViewController = ActiveLivenessViewController()
+        activeLivenessViewController.delegate = self
+        activeLivenessViewController.credentials = credentials
+        activeLivenessViewController.livenessType = .hybrid
+        
+        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+          self.currentViewController = activeLivenessViewController
+          self.isInProgress = true
+          rootViewController.present(activeLivenessViewController, animated: true)
+          
+          result([
+            "status": "success",
+            "faceIDMessage": [
+              "success": true,
+              "message": "Hybrid liveness started"
+            ]
+          ])
+        } else {
+          result(FlutterError(code: "NO_VIEW_CONTROLLER", message: "Could not find root view controller", details: nil))
+        }
+      }
+    } catch {
+      result(FlutterError(code: "CREDENTIAL_PARSING_FAILED", message: "Failed to parse credentials: \(error.localizedDescription)", details: nil))
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func registerUserWithPhoto(call: FlutterMethodCall, result: @escaping FlutterResult) {
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard let arguments = call.arguments as? [String: Any] else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    do {
+      let credentials = try parseFaceRecognizerCredentials(from: arguments)
+      
+      DispatchQueue.main.async { [weak self] in
+        let faceRecognizer = FaceRecognizer()
+        faceRecognizer.credentials = credentials
+        
+        if let photoBase64 = arguments["photo"] as? String,
+           let photoData = Data(base64Encoded: photoBase64),
+           let photo = UIImage(data: photoData) {
+          
+          faceRecognizer.register(with: photo) { response, error in
+            DispatchQueue.main.async {
+              if let error = error {
+                result(FlutterError(code: "REGISTRATION_FAILED", message: error.localizedDescription, details: nil))
+              } else if let response = response {
+                result([
+                  "status": "success", 
+                  "result": response.toDictionary()
+                ])
+              }
+            }
+          }
+        } else {
+          result(FlutterError(code: "INVALID_PHOTO", message: "Invalid photo data", details: nil))
+        }
+      }
+    } catch {
+      result(FlutterError(code: "CREDENTIAL_PARSING_FAILED", message: "Failed to parse credentials: \(error.localizedDescription)", details: nil))
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func authenticateUserWithPhoto(call: FlutterMethodCall, result: @escaping FlutterResult) {
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard let arguments = call.arguments as? [String: Any] else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    do {
+      let credentials = try parseFaceRecognizerCredentials(from: arguments)
+      
+      DispatchQueue.main.async { [weak self] in
+        let faceRecognizer = FaceRecognizer()
+        faceRecognizer.credentials = credentials
+        
+        if let photoBase64 = arguments["photo"] as? String,
+           let photoData = Data(base64Encoded: photoBase64),
+           let photo = UIImage(data: photoData) {
+          
+          faceRecognizer.authenticate(with: photo) { response, error in
+            DispatchQueue.main.async {
+              if let error = error {
+                result(FlutterError(code: "AUTHENTICATION_FAILED", message: error.localizedDescription, details: nil))
+              } else if let response = response {
+                result([
+                  "status": "success",
+                  "result": response.toDictionary()
+                ])
+              }
+            }
+          }
+        } else {
+          result(FlutterError(code: "INVALID_PHOTO", message: "Invalid photo data", details: nil))
+        }
+      }
+    } catch {
+      result(FlutterError(code: "CREDENTIAL_PARSING_FAILED", message: "Failed to parse credentials: \(error.localizedDescription)", details: nil))
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func addUserToList(call: FlutterMethodCall, result: @escaping FlutterResult) {
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+    guard let arguments = call.arguments as? [String: Any],
+          let serverURL = arguments["serverURL"] as? String,
+          let userId = arguments["userId"] as? String,
+          let photoBase64 = arguments["photo"] as? String,
+          let photoData = Data(base64Encoded: photoBase64),
+          let photo = UIImage(data: photoData) else {
+      result(FlutterError(code: "INVALID_ARGUMENTS", message: "Invalid arguments provided", details: nil))
+      return
+    }
+    
+    let faceService = FaceService(serverURL: serverURL)
+    faceService.addUser(userId: userId, photo: photo) { response, error in
+      DispatchQueue.main.async {
+        if let error = error {
+          result(FlutterError(code: "ADD_USER_FAILED", message: error.localizedDescription, details: nil))
+        } else {
+          result(["status": "success", "message": "User added successfully"])
+        }
+      }
+    }
+#else
+    result(FlutterError(code: "FRAMEWORK_NOT_AVAILABLE", message: "UdentifyFACE framework not available. Please add UdentifyFACE.xcframework to ios/Frameworks/", details: nil))
+#endif
+  }
+  
+  private func cancelFaceRecognition(result: @escaping FlutterResult) {
+    if isInProgress {
+      isInProgress = false
+      currentViewController?.dismiss(animated: true) {
+        self.currentViewController = nil
+      }
+    }
+    result(nil)
+  }
+  
+  private func isFaceRecognitionInProgress(result: @escaping FlutterResult) {
+    result(isInProgress)
+  }
+  
+  // MARK: - Helper Methods
+  
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+  private func parseFaceRecognizerCredentials(from arguments: [String: Any]) throws -> FaceRecognizerCredentials {
+    guard let serverURL = arguments["serverURL"] as? String else {
+      throw NSError(domain: "LivenessFlutter", code: 1, userInfo: [NSLocalizedDescriptionKey: "Missing serverURL"])
+    }
+    
+    let credentials = FaceRecognizerCredentials(serverURL: serverURL)
+    
+    if let transactionId = arguments["transactionId"] as? String {
+      credentials.transactionId = transactionId
+    }
+    
+    if let userId = arguments["userId"] as? String {
+      credentials.userId = userId
+    }
+    
+    if let requestTimeout = arguments["requestTimeout"] as? Double {
+      credentials.requestTimeout = requestTimeout
+    }
+    
+    if let logLevel = arguments["logLevel"] as? String {
+      credentials.logLevel = convertLogLevel(logLevel)
+    }
+    
+    return credentials
+  }
+  
+  private func convertLogLevel(_ levelString: String) -> LogLevel {
+    switch levelString.lowercased() {
+    case "debug":
+      return .debug
+    case "info":
+      return .info
+    case "warning":
+      return .warning
+    case "error":
+      return .error
+    default:
+      return .warning
+    }
+  }
+#endif
+  
+  // MARK: - Camera Permission Methods
+  
+  private func getCameraPermissionStatus() -> String {
+    let status = AVCaptureDevice.authorizationStatus(for: .video)
+    
+    switch status {
+    case .authorized:
+      return "granted"
+    case .denied:
+      return "denied"
+    case .restricted:
+      return "restricted"
+    case .notDetermined:
+      return "notDetermined"
+    @unknown default:
+      return "unknown"
+    }
+  }
+  
+  private func requestCameraPermission(completion: @escaping () -> Void) {
+    AVCaptureDevice.requestAccess(for: .video) { _ in
+      DispatchQueue.main.async {
+        completion()
+      }
+    }
+  }
+}
+
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+// MARK: - FaceRecognizer Delegate
+extension LivenessFlutterPlugin: FaceRecognizerDelegate {
+  public func onResult(_ result: FaceRecognizerResult) {
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      
+      self.isInProgress = false
+      self.currentViewController?.dismiss(animated: true) {
+        self.currentViewController = nil
+      }
+      
+      let resultMap: [String: Any] = [
+        "status": "success",
+        "faceIDMessage": [
+          "success": true,
+          "message": "Face recognition completed",
+          "result": result.toDictionary()
+        ]
+      ]
+      
+      self.channel?.invokeMethod("onResult", arguments: resultMap)
+    }
+  }
+  
+  public func onFailure(_ error: FaceRecognizerError) {
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      
+      self.isInProgress = false
+      self.currentViewController?.dismiss(animated: true) {
+        self.currentViewController = nil
+      }
+      
+      let errorMap: [String: Any] = [
+        "code": error.code ?? "ERR_FACE_RECOGNITION",
+        "message": error.localizedDescription
+      ]
+      
+      self.channel?.invokeMethod("onFailure", arguments: errorMap)
+    }
+  }
+  
+  public func onPhotoTaken() {
+    DispatchQueue.main.async { [weak self] in
+      self?.channel?.invokeMethod("onPhotoTaken", arguments: nil)
+    }
+  }
+  
+  public func onSelfieTaken(_ base64Image: String?) {
+    DispatchQueue.main.async { [weak self] in
+      let arguments: [String: Any?] = ["base64Image": base64Image]
+      self?.channel?.invokeMethod("onSelfieTaken", arguments: arguments)
+    }
+  }
+}
+
+#if canImport(UdentifyFACE) && canImport(UdentifyCommons)
+// MARK: - ActiveLiveness Delegate
+extension LivenessFlutterPlugin: ActiveLivenessDelegate {
+  public func onActiveLivenessResult(_ result: ActiveLivenessResult) {
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      
+      self.isInProgress = false
+      self.currentViewController?.dismiss(animated: true) {
+        self.currentViewController = nil
+      }
+      
+      let resultMap: [String: Any] = [
+        "status": "success",
+        "faceIDMessage": [
+          "success": true,
+          "message": "Active liveness completed",
+          "result": result.toDictionary()
+        ]
+      ]
+      
+      self.channel?.invokeMethod("onActiveLivenessResult", arguments: resultMap)
+    }
+  }
+  
+  public func onActiveLivenessFailure(_ error: ActiveLivenessError) {
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      
+      self.isInProgress = false
+      self.currentViewController?.dismiss(animated: true) {
+        self.currentViewController = nil
+      }
+      
+      let errorMap: [String: Any] = [
+        "code": error.code ?? "ERR_ACTIVE_LIVENESS",
+        "message": error.localizedDescription
+      ]
+      
+      self.channel?.invokeMethod("onActiveLivenessFailure", arguments: errorMap)
+    }
+  }
+}
+#endif
+#endif

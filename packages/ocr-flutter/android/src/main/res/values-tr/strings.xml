@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Turkish string overrides for the Udentify OCR SDK.
+    Only user-facing text is redefined here; internal identifiers and
+    error codes fall back to values/strings.xml automatically.
+-->
+<resources>
+    <!-- OCR Status View Titles -->
+    <string name="udentify_ocr_status_view_title_default">OCR Tarama</string>
+    <string name="udentify_ocr_status_view_title_front_side">Ön Yüzü Tarayın</string>
+    <string name="udentify_ocr_status_view_title_back_side">Arka Yüzü Tarayın</string>
+
+    <!-- OCR Button Titles -->
+    <string name="udentify_ocr_button_retake_title">Yeniden Çek</string>
+    <string name="udentify_ocr_button_use_title">Kullan</string>
+    <string name="udentify_ocr_button_capture_title">Çek</string>
+
+    <!-- OCR Instruction Texts -->
+    <string name="udentify_ocr_instruction_text_front_side">Kimlik kartınızın ön yüzünü çerçeve içine hizalayın.</string>
+    <string name="udentify_ocr_instruction_text_back_side">Kimlik kartınızın arka yüzünü çerçeve içine hizalayın.</string>
+
+    <!-- OCR Review Texts -->
+    <string name="udentify_ocr_review_title_front_side">Ön Yüz Yakalandı</string>
+    <string name="udentify_ocr_review_title_back_side">Arka Yüz Yakalandı</string>
+    <string name="udentify_ocr_review_instruction_text_front_side">Fotoğrafın bulanık olmadığından emin olun.</string>
+    <string name="udentify_ocr_review_instruction_text_back_side">Fotoğrafın bulanık olmadığından emin olun.</string>
+
+    <!-- OCR Additional -->
+    <string name="udentify_ocr_request_permission">Bu uygulama kamera izni gerektiriyor.</string>
+    <string name="udentifyocr_footer_button_text_scanning">Taranıyor...</string>
+    <string name="udentifyocr_scan_accept">KABUL ET</string>
+    <string name="udentifyocr_scan_your_id_card">Kimlik kartınızı tarayın</string>
+    <string name="udentifyocr_scan_back_side_your_id_card">Kimlik kartınızın arka yüzünü tarayın</string>
+
+    <!-- Hologram Check Strings -->
+    <string name="udentify_hologram_status_view_title_default">Hologramı kontrol edin</string>
+    <string name="udentifyocr_hologram">Hologram Kaydını Başlat</string>
+    <string name="udentifyocr_hologram_recording">Kaydediliyor...</string>
+    <string name="udentifyocr_scan_hologram">Hologramı Tara</string>
+
+    <!-- Classifier strings -->
+    <string name="udentifyocr_classification_card_generic">kart</string>
+    <string name="udentifyocr_classification_id_card">T.C. Kimlik</string>
+    <string name="udentifyocr_classification_drivers_license">T.C. Ehliyet</string>
+    <string name="udentifyocr_classification_instruction_success">Belge tespit edildi. Lütfen görüntü yakalanana kadar bir süre sabit tutun.</string>
+    <string name="udentifyocr_classification_instruction_unidentified">Belge algılanamadı. Lütfen çerçeve içinde geçerli bir %s tarayıp tekrar deneyin.</string>
+    <string name="udentifyocr_classification_instruction_mismatch">Belge uyuşmuyor. Lütfen çerçeve içinde geçerli bir %s tarayıp tekrar deneyin.</string>
+    <string name="udentifyocr_classification_instruction_mismatch_front">Belge uyuşmuyor. Lütfen %s ön yüzünü çerçeveye düzgün hizalayıp tekrar deneyin.</string>
+    <string name="udentifyocr_classification_instruction_mismatch_back">Belge uyuşmuyor. Lütfen %s arka yüzünü çerçeveye düzgün hizalayıp tekrar deneyin.</string>
+    <string name="udentifyocr_classification_footer_success">Taranıyor...</string>
+    <string name="udentifyocr_classification_footer_unidentified">Kart tanımlanamadı</string>
+    <string name="udentifyocr_classification_footer_mismatch">Kart uyuşmuyor</string>
+    <string name="udentifyocr_classification_footer_mismatch_front">Ön yüze çevirin</string>
+    <string name="udentifyocr_classification_footer_mismatch_back">Arka yüze çevirin</string>
+</resources>

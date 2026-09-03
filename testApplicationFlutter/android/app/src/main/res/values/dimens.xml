@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Udentify Footer Button Style Dimens     -->
+    <dimen name="udentify_ocr_footer_btn_border_stroke_width">3dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_border_corner_radius">8dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_height">70dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_leading">16dp</dimen>
+    <dimen name="udentify_ocr_footer_btn_trailing">16dp</dimen>
+
+    <!--    Udentify Use Button Style Dimens     -->
+    <dimen name="udentify_ocr_use_btn_border_stroke_width">0dp</dimen>
+    <dimen name="udentify_ocr_use_btn_border_corner_radius">8dp</dimen>
+    <dimen name="udentify_ocr_use_btn_height">70dp</dimen>
+    <dimen name="udentify_ocr_use_btn_leading">16dp</dimen>
+    <dimen name="udentify_ocr_use_btn_trailing">10dp</dimen>
+
+    <!--    Udentify Retake Button Style Dimens     -->
+    <dimen name="udentify_ocr_retake_btn_border_stroke_width">2dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_border_corner_radius">8dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_height">70dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_leading">10dp</dimen>
+    <dimen name="udentify_ocr_retake_btn_trailing">16dp</dimen>
+
+    <!--    MaskView Dimens     -->
+    <dimen name="udentify_ocr_mask_border_stroke_width">4dp</dimen>
+    <dimen name="udentify_ocr_mask_border_corner_radius">9dp</dimen>
+    <dimen name="udentify_ocr_mask_horizontal_offset">0dp</dimen>
+</resources>

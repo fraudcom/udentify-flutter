@@ -1,0 +1,77 @@
+PODS:
+  - Flutter (1.0.0)
+  - LiveKitClient (2.13.0):
+    - LiveKitUniFFI (= 0.0.5)
+    - LiveKitWebRTC (= 144.7559.03)
+    - SwiftProtobuf
+  - LiveKitUniFFI (0.0.5)
+  - LiveKitWebRTC (144.7559.03)
+  - liveness_flutter (1.0.0):
+    - Flutter
+    - udentify_core_flutter
+  - mrz_flutter (1.1.0):
+    - Flutter
+    - udentify_core_flutter
+  - nfc_flutter (0.1.0):
+    - Flutter
+    - udentify_core_flutter
+  - ocr_flutter (0.1.0):
+    - Flutter
+    - udentify_core_flutter
+  - SwiftProtobuf (1.38.1)
+  - udentify_core_flutter (1.0.0):
+    - Flutter
+  - video_call_flutter (0.1.0):
+    - Flutter
+    - LiveKitClient (< 2.14, >= 2.13)
+    - udentify_core_flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - liveness_flutter (from `.symlinks/plugins/liveness_flutter/ios`)
+  - mrz_flutter (from `.symlinks/plugins/mrz_flutter/ios`)
+  - nfc_flutter (from `.symlinks/plugins/nfc_flutter/ios`)
+  - ocr_flutter (from `.symlinks/plugins/ocr_flutter/ios`)
+  - udentify_core_flutter (from `.symlinks/plugins/udentify_core_flutter/ios`)
+  - video_call_flutter (from `.symlinks/plugins/video_call_flutter/ios`)
+
+SPEC REPOS:
+  https://github.com/livekit/podspecs.git:
+    - LiveKitClient
+    - LiveKitUniFFI
+    - LiveKitWebRTC
+  trunk:
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  liveness_flutter:
+    :path: ".symlinks/plugins/liveness_flutter/ios"
+  mrz_flutter:
+    :path: ".symlinks/plugins/mrz_flutter/ios"
+  nfc_flutter:
+    :path: ".symlinks/plugins/nfc_flutter/ios"
+  ocr_flutter:
+    :path: ".symlinks/plugins/ocr_flutter/ios"
+  udentify_core_flutter:
+    :path: ".symlinks/plugins/udentify_core_flutter/ios"
+  video_call_flutter:
+    :path: ".symlinks/plugins/video_call_flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
+  LiveKitClient: f72345e4cda0447283c3ae0265131b462391609b
+  LiveKitUniFFI: 09d13a3a068a1fd9de32ed199e4b83fba69663f9
+  LiveKitWebRTC: 7146e3ed90154e2c1275c9ef48d85a9cd2e10374
+  liveness_flutter: 5a4c4bdbdabb4da009bda4725f425f1a185c6f32
+  mrz_flutter: 99e8572ee19081005c1a7d5285aacd81627d1eb3
+  nfc_flutter: 9b54605b998d63370add90bd01b288bb209d6b46
+  ocr_flutter: 0c98324fd4d5aea33f1d47ff0a0fbc1c99861d97
+  SwiftProtobuf: 409d3aaec90e51b1705b1dd8065b56893450e77c
+  udentify_core_flutter: 96c452c5cf77aa0198ee4dfef29255947d1a596b
+  video_call_flutter: 1397fd37a7983e709f6d79be8c062a6d17633cc7
+
+PODFILE CHECKSUM: 5f04932e2843e57c14c6addec3bb8838c75fa8d9
+
+COCOAPODS: 1.17.0

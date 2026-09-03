@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <!-- Hosts the SDK camera/review fragments outside the Flutter activity so that the
+             SDK's own back navigation cannot reach the application's Dart Navigator. -->
+        <activity
+            android:name="com.example.ocr_flutter.OcrHostActivity"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:theme="@style/UdentifyOcrHostTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" />
+    </application>
+</manifest>
