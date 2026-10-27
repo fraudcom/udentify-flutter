@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches the window the SDK fragments used to render in (the Flutter activity's
+         no-title-bar theme), so moving them into OcrHostActivity does not change their look. -->
+    <style name="UdentifyOcrHostTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

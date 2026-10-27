@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Turkish strings for the UdentifyFACE SDK: the AAR ships no Turkish resources. Key names
+         must match the vendor SDK's resource names. Synced from the Udentify docs. -->
+    <string name="udentifyface_footer_button_text_default">Selfie Çek</string>
+    <string name="udentifyface_footer_button_text_progressing">Canlılık Kontrolü</string>
+    <string name="udentifyface_footer_button_text_result">Canlılık</string>
+
+    <string name="udentifyface_message_face_too_big">Geri Çekilin</string>
+    <string name="udentifyface_message_face_too_small">Yaklaşın</string>
+    <string name="udentifyface_message_face_not_found">Yüz bulunamadı</string>
+    <string name="udentifyface_message_too_many_faces">Birden fazla yüz bulundu</string>
+    <string name="udentifyface_message_face_angled">Yüzünüzü kameraya çevirin</string>
+    <string name="udentifyface_message_head_angled">Yüzünüzü kameraya çevirin</string>
+    <string name="udentifyface_message_face_off_center">Yüzünüzü ortalayın</string>
+    <string name="udentifyface_message_eyes_closed">Gözlerinizi açın</string>
+    <string name="udentifyface_message_mask_detected">Maskenizi çıkarın</string>
+
+    <string name="udentifyface_active_liveness_footer_button_text_recording">Kaydediliyor…</string>
+    <string name="udentifyface_active_liveness_footer_button_text_processing">İşleniyor…</string>
+    <string name="udentifyface_active_liveness_footer_button_text_default">Yüzünüzü ortalayın</string>
+    <string name="udentifyface_active_liveness_footer_button_text_result">Sonraki Adım</string>
+    <string name="udentifyface_active_liveness_footer_label_text_processing">Aktif canlılık kontrolü yapılıyor.\nLütfen bekleyin…</string>
+
+    <string name="udentifyface_gesture_text_move_head_to_left">Sola Dönün</string>
+    <string name="udentifyface_gesture_text_move_head_to_right">Sağa Dönün</string>
+    <string name="udentifyface_gesture_text_move_head_to_up">Yukarı Kaldırın</string>
+    <string name="udentifyface_gesture_text_move_head_to_down">Aşağı Eğin</string>
+    <string name="udentifyface_gesture_text_blink_once">Bir kez göz kırpın</string>
+    <string name="udentifyface_gesture_text_blink_twice">İki kez göz kırpın</string>
+    <string name="udentifyface_gesture_text_blink_thrice">Üç kez göz kırpın</string>
+    <string name="udentifyface_gesture_text_smile">Gülümseyin</string>
+
+    <!-- Strings the face AAR ships that its documentation does not list. -->
+    <string name="udentify_request_permission">Bu uygulama kamera iznine ihtiyaç duyuyor.</string>
+    <string name="udentifyface_message_photo_upload_failed">Fotoğraf yüklenemedi</string>
+    <string name="udentifyface_message_photo_upload_successful">Fotoğraf başarıyla yüklendi</string>
+    <string name="align_face">Lütfen yüzünüzü çerçeveyle hizalayın</string>
+    <string name="face_recognition_info">Yüzünüzü sisteme tanıtın</string>
+    <string name="face_recognition_tutorial_header">Yüzünüzü sisteme tanıtın</string>
+    <string name="face_recognition_tutorial_info">Yüzünüzü sisteme tanıtmak için\nyüzünüzü belirtilen alanın içine\nyerleştirin ve bir süre bekleyin.</string>
+</resources>

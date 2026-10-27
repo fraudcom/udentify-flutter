@@ -1,0 +1,64 @@
+PODS:
+  - Flutter (1.0.0)
+  - LiveKitWebRTC (144.7559.03)
+  - liveness_flutter (26.3.0928):
+    - Flutter
+    - udentify_core_flutter
+  - mrz_flutter (26.3.0928):
+    - Flutter
+    - udentify_core_flutter
+  - nfc_flutter (26.3.0928):
+    - Flutter
+    - udentify_core_flutter
+  - ocr_flutter (26.3.0928):
+    - Flutter
+    - udentify_core_flutter
+  - udentify_core_flutter (26.3.0928):
+    - Flutter
+  - video_call_flutter (26.3.0928):
+    - Flutter
+    - LiveKitWebRTC (= 144.7559.03)
+    - udentify_core_flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - liveness_flutter (from `.symlinks/plugins/liveness_flutter/ios`)
+  - mrz_flutter (from `.symlinks/plugins/mrz_flutter/ios`)
+  - nfc_flutter (from `.symlinks/plugins/nfc_flutter/ios`)
+  - ocr_flutter (from `.symlinks/plugins/ocr_flutter/ios`)
+  - udentify_core_flutter (from `.symlinks/plugins/udentify_core_flutter/ios`)
+  - video_call_flutter (from `.symlinks/plugins/video_call_flutter/ios`)
+
+SPEC REPOS:
+  https://github.com/livekit/podspecs.git:
+    - LiveKitWebRTC
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  liveness_flutter:
+    :path: ".symlinks/plugins/liveness_flutter/ios"
+  mrz_flutter:
+    :path: ".symlinks/plugins/mrz_flutter/ios"
+  nfc_flutter:
+    :path: ".symlinks/plugins/nfc_flutter/ios"
+  ocr_flutter:
+    :path: ".symlinks/plugins/ocr_flutter/ios"
+  udentify_core_flutter:
+    :path: ".symlinks/plugins/udentify_core_flutter/ios"
+  video_call_flutter:
+    :path: ".symlinks/plugins/video_call_flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  LiveKitWebRTC: 7146e3ed90154e2c1275c9ef48d85a9cd2e10374
+  liveness_flutter: 928a289804b2a4757dcbbc69579672ea99048360
+  mrz_flutter: 4bfddc39bec2247bad170f8182350ef5459e13cf
+  nfc_flutter: 483d4f1f8ee739c7535141a35c99be838df54db9
+  ocr_flutter: b7cf1efffba81d5ed409fe09db3f0ccd34e7b4b4
+  udentify_core_flutter: b02af79c6aa52005859a4274f136f8e4be4b0830
+  video_call_flutter: bc0728d94a2ac6585bc1460d4a5ccffe54e1fcdb
+
+PODFILE CHECKSUM: 5f04932e2843e57c14c6addec3bb8838c75fa8d9
+
+COCOAPODS: 1.17.0

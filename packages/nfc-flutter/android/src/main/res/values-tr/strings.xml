@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The in-call LiveKYC NFC screen. The English defaults are in the NFC AAR. -->
+    <string name="udentify_nfc_repeat_title">Kimlik çipinizi tarayın</string>
+    <string name="udentify_nfc_repeat_explanation">Kimlik kartınızı veya pasaportunuzu telefonunuzun arkasına tutun.</string>
+    <string name="udentify_nfc_repeat_scanning">Taranıyor…</string>
+    <string name="udentify_nfc_repeat_cancel">İptal</string>
+    <string name="udentify_nfc_repeat_disabled">Lütfen cihaz ayarlarından NFC\'yi etkinleştirin.</string>
+</resources>

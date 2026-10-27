@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The three waiting-screen labels the Android SDK documents as overridable. The SDK's English
+         defaults are in its AAR; only Turkish is added here. -->
+    <string name="udentify_vc_notification_label_default">Görüntülü görüşme başlıyor, lütfen bekleyin...</string>
+    <string name="udentify_vc_notification_label_countdown">Görüntülü görüşme %d sn içinde başlayacak.</string>
+    <string name="udentify_vc_notification_label_token_fetch">Kullanıcı yetkilendiriliyor...</string>
+</resources>

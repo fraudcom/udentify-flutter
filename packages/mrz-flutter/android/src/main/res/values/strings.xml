@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The MRZ camera screen is this plugin's own UI, not the SDK's. These are its texts; an app
+         overrides any of them by defining the same name in its own strings.xml. -->
+    <string name="mrz_label_doc_no">Doc no:</string>
+    <string name="mrz_label_birth_date">Birth date:</string>
+    <string name="mrz_label_expires_on">Expires on:</string>
+    <string name="mrz_button_next">Next</string>
+    <string name="mrz_toast_camera_permission_required">Camera permission required</string>
+    <string name="mrz_camera2_not_supported">Camera2 not supported</string>
+    <string name="mrz_toast_camera_configuration_failed">Camera configuration failed</string>
+</resources>

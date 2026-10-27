@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mrz_label_doc_no">Belge no:</string>
+    <string name="mrz_label_birth_date">Doğum tarihi:</string>
+    <string name="mrz_label_expires_on">Son geçerlilik:</string>
+    <string name="mrz_button_next">İleri</string>
+    <string name="mrz_toast_camera_permission_required">Kamera izni gerekli</string>
+    <string name="mrz_camera2_not_supported">Camera2 desteklenmiyor</string>
+    <string name="mrz_toast_camera_configuration_failed">Kamera yapılandırması başarısız oldu</string>
+    <!-- The MRZ AAR's own camera-permission text. -->
+    <string name="idchecker_request_permission">Bu uygulama kamera iznine ihtiyaç duyuyor.</string>
+</resources>
